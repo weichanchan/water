@@ -1,0 +1,28 @@
+
+.banner{width:750rpx;height:420rpx;position: relative;}
+swiper {height:420rpx;}
+.banner_swiper{z-index: 1;}
+.slide-image{width:750rpx; height:420rpx;}
+
+.city_bg,.city{height:60rpx;border-radius: 30rpx;position: absolute;top:8rpx;}
+.city_bg{line-height:156rpx;background: #000;opacity: 0.7;z-index: 3;}
+.city_bg,.city{height:56rpx;line-height:56rpx;left:10rpx;padding:0 20rpx 0 0;overflow:hidden;}
+.city,.searchBox{z-index: 4;}
+.city_bg image,.city image{float:left; width: 26rpx;height: 32rpx;margin: 14rpx 10rpx 0 20rpx;}
+.city_bg text,.city text{float:left;color: #fff;font-size: 26rpx;}
+
+.contentWidtn{padding-top:0;}
+
+.functionNav {height: 103rpx; margin-bottom:20rpx;padding:15rpx 20rpx 0;}
+.functionNav .func{width: 30%;text-align: center;}
+.functionNav .func text{display: block;font-size: 24rpx;}
+.functionNav .sendWater image{width:51rpx;height: 49rpx;}
+.functionNav .waterTicket {width:40%;}
+.functionNav .waterTicket image{width: 67rpx;height: 49rpx;}
+.functionNav .waterPeople image{width: 54rpx;height: 49rpx;}
+
+.searchBox{float: right;}
+.searchBox navigator{display: block;width:80rpx;height: 68rpx;text-align: center; padding: 22rpx 10rpx 0 0 ;}
+.searchBox image{width: 33rpx;height: 34rpx;}
+
+

@@ -1,0 +1,5 @@
+.shadow{margin-bottom: 30rpx;}
+
+.sendTime .detail{color:#666;}
+
+.noAddress .icon_position{margin-left:20rpx;}

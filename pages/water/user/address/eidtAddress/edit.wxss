@@ -1,0 +1,12 @@
+page {background: #f7f7f7;}
+
+.myName .detailInput input{color: #666;}
+
+.myDetailedAddress { height: 232rpx;padding-bottom: 60rpx;}
+.myDetailedAddress textarea{width: 670rpx; height: 192rpx;line-height: 48rpx;padding:20rpx;}
+
+.btnWrap .btn{width:550rpx;border-radius:68rpx;margin-bottom: 40rpx;}
+.btnWrap .btnGray{width:548rpx;}
+
+
+

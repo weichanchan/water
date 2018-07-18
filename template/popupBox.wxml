@@ -1,0 +1,163 @@
+<!--选择品牌-->
+<template name="selectionBrands">
+<view class="drawer_box" hidden="{{showSelectionBrandsBox}}"> 
+<view class="drawer_title clearfix"><image src='/images/icon_close.png' class='close' bindtap='closeSelectionBrandsBox'></image>选择品牌</view> 
+  <view class="drawer_content drawer_brands drawer_quan clearfix"> 
+  <view class="quan brand {{brandsKey==-1?'selected':''}}" bindtap="changBrandsColor" data-index='-1'><text>全部品牌</text><icon type="success" size="16" color="#3eafff"/><view class='icon_bg'></view></view>
+<view class="quan brand {{brandsKey==index?'selected':''}}" wx:for="{{brands}}"  wx:key='brands' bindtap="changBrandsColor" data-index='{{index}}'><text>{{item.name}}</text><icon type="success" size="16" color="#3eafff"/><view class='icon_bg'></view></view>
+  </view>
+</view>
+<view class="drawer_screen" bindtap='closeSelectionBrandsBox' hidden="{{showSelectionBrandsBox}}"></view>
+</template>
+
+<!--选择分类-->
+<template name="selectionClassification">
+<view class="drawer_box" hidden="{{showSelectionClassificationBox}}"> 
+<view class="drawer_title clearfix"><image src='/images/icon_close.png' class='close' bindtap='closeClearSelectionClassificationBox'></image>选择分类</view>
+  <view class="drawer_quan_title">包装方式</view>
+  <view class="drawer_content drawer_quan drawer_fenlei"> 
+  <view class="quan fenlei {{bucketKey==-1?'selected':''}}" bindtap="changBucketColor" data-index='-1'><text>全部</text><icon type="success" size="16" color="#3eafff"/><view class='icon_bg'></view></view>
+<view class="quan fenlei {{itemName.selected?'selected':''}}" wx:for="{{bucketType}}"  wx:key='bucket' wx:for-index="idx" wx:for-item="itemName" bindtap="changBucketColor" data-index='{{idx}}'><text>{{itemName.name}}</text><icon type="success" size="16" color="#3eafff"/><view class='icon_bg'></view></view>
+  </view>
+  <view class="drawer_quan_title">饮用水种类</view>
+  <view class="drawer_content drawer_quan drawer_fenlei"> 
+  <view class="quan fenlei {{waterKey==-1?'selected':''}}" bindtap="changWaterColor" data-index='-1'><text>全部</text><icon type="success" size="16" color="#3eafff"/><view class='icon_bg'></view></view>
+<view class="quan fenlei {{itemName.selected?'selected':''}}" wx:for="{{waterType}}"  wx:key='water' wx:for-index="idx" wx:for-item="itemName" bindtap="changWaterColor" data-index='{{idx}}'><text>{{itemName.name}}</text><icon type="success" size="16" color="#3eafff"/><view class='icon_bg'></view></view>
+  </view>
+  <view class="btn btnBlue btn_ok" bindtap="confirmDoneClass">确定</view> 
+</view>
+<view class="drawer_screen" bindtap='closeClearSelectionClassificationBox' hidden="{{showSelectionClassificationBox}}"></view>
+</template>
+
+<!--选择排序-->
+<template name="priceSorting">
+<view class="drawer_box" hidden="{{showPriceSortingBox}}"> 
+<view class="drawer_title clearfix"><image src='/images/icon_close.png' class='close' bindtap='closePriceSortingBox'></image>选择排序</view> 
+  <view class="drawer_content drawer_list"> 
+  <view class="list {{sortKey==-1?'current':''}}" bindtap="changPriceSortingColor" data-index='-1'><text>默认排序</text></view>
+<view class="list {{sortKey==index?'current':''}}" wx:for="{{priceSorting}}"  wx:key='priceSorting' bindtap="changPriceSortingColor" data-index='{{index}}'><text>{{item.name}}</text></view>
+  </view> 
+</view>
+<view class="drawer_screen" bindtap='closePriceSortingBox' hidden="{{showPriceSortingBox}}"></view>
+</template>
+
+<!--选择性别-->
+<template name="sex">
+<view class="drawer_box" hidden="{{showSexBox}}"> 
+<view class="drawer_title clearfix"><image src='/images/icon_close.png' class='close' bindtap='closeSexBox'></image>选择性别</view> 
+  <view class="drawer_content drawer_list"> 
+<view class="list {{sexKey==index?'current':''}}" wx:for="{{sexArray}}"  wx:key='sex' bindtap="changSexColor" data-index='{{index}}'><text>{{item.value}}</text></view>
+  </view> 
+</view>
+<view class="drawer_screen" bindtap='closeSexBox' hidden="{{showSexBox}}"></view>
+</template>
+
+<!--当前城市-->
+<template name="currentCity">
+<view class="drawer_box" hidden="{{showCurrentCityBox}}"> 
+  <view class="drawer_content drawer_currentCity clearfix"> 
+<image src='/images/cityError.png' class='cityError'></image>
+      <view class='tc p1'>您当前的城市：{{nowCity}}</view>
+      <view class='tc p2'>当前仅支持南宁市市区范围内下单及配送！</view>
+  </view> 
+  <view class="btn btnBlue btn_ok" bindtap="closeCurrentCityBox">我知道了，继续浏览</view> 
+</view>
+<view class="drawer_screen" bindtap='closeCurrentCityBox' hidden="{{showCurrentCityBox}}"></view>
+</template>
+
+<!--购物车-->
+<template name="shoppingCartDeleteGoods">
+<view class="drawer_box" hidden="{{showPopupBox}}"> 
+  <view class="drawer_content drawer_shoppingCart"> 
+<image src='/images/warn.png' class='warn'></image>
+      <view class='del'>即将从购物车移除该商品</view>
+  </view> 
+  <view class="btn btnBlue btn_ok" bindtap="confirmDelele">确定</view> 
+  <view class="btn btnBlue btn_cancel" bindtap="cancelDelele">取消</view> 
+</view>
+<view class="drawer_screen" bindtap="cancel" hidden="{{showPopupBox}}"></view>
+</template>
+
+<!--备注-->
+<template name="remarks">
+<view class="drawer_box" hidden="{{showRemarksBox}}">
+<form bindsubmit="formSubmit">
+  <view class="drawer_title clearfix"><image src='/images/icon_close.png' class='close' bindtap='closeRemarksBox'></image>备注</view> 
+  <view class="drawer_content drawer_remarks"> 
+      <textarea bindblur="bindTextAreaBlur" value="{{remarks}}" placeholder-class='placeholder' placeholder='请填写备注信息' class='remarks_text' maxlength="{{max}}" bindinput="inputs">
+      <text class="currentWordNumber">{{currentWordNumber|0}}/{{max}}</text>
+      </textarea>
+  </view>
+  <button formType="submit" class="btn btnBlue btn_ok">确定</button>
+  </form>
+</view>
+<view class="drawer_screen" bindtap='closeRemarksBox' hidden="{{showRemarksBox}}"></view>
+</template>
+<template name="remarksLocation">
+<view class="drawer_box" hidden="{{showRemarksBox}}">
+  <view class="drawer_title clearfix">备注</view> 
+  <view class="drawer_content drawer_remarks"> 
+      <textarea bindblur="bindTextAreaBlur" value="{{remarks}}" placeholder-class='placeholder' placeholder='请填写备注信息' class='remarks_text' maxlength="{{max}}" bindinput="inputs">
+      <text class="currentWordNumber">{{currentWordNumber|0}}/{{max}}</text>
+      </textarea>
+  </view>
+</view>
+</template>
+
+<!--关于押金-->
+<template name="aboutDeposit">
+<view class="drawer_box" hidden="{{showAboutDepositBox}}">
+  <view class="drawer_title clearfix"><image src='/images/icon_close.png' class='close' bindtap='closeAboutDepositBox'></image>关于押金</view> 
+  <view class="drawer_content drawer_aboutDeposit"> 
+     <text>说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字</text>
+  </view>
+  <button class="btn btnBlue btn_ok" bindtap="nowPayDeposit">我知道了，立即支付</button>
+</view>
+<view class="drawer_screen" bindtap='closeAboutDepositBox' hidden="{{showAboutDepositBox}}"></view>
+</template>
+
+<!--押金-->
+<template name="deposit">
+<cover-view class="drawer_screen" bindtap='closeDepositBox' hidden="{{showDepositBox}}"></cover-view>
+<cover-view class="drawer_box" hidden="{{showDepositBox}}">
+  <cover-view class="drawer_title clearfix"><cover-image src='/images/icon_close.png' class='close' bindtap='closeDepositBox'></cover-image>选择充值押金</cover-view>
+  <cover-view class="drawer_content drawer_deposit clearfix">
+     <cover-view class="deposit {{depositsKey==index?'selected':''}}" wx:for="{{deposits}}"  wx:key='deposits' bindtap="changDepositsColor" data-index='{{index}}'><cover-view class='text price'>{{item.price}}元</cover-view><cover-view class='text bucket'>（{{item.bucket}}桶）</cover-view></cover-view>
+  </cover-view>
+</cover-view>
+</template>
+
+<!--配送时间-->
+<template name="sendTime">
+<view class="drawer_box drawer_box_date" hidden="{{showSendTimeBox}}">
+  <view class="drawer_title clearfix"><image src='/images/icon_close.png' class='close' bindtap='closeSendTimeBox'></image>配送时间</view> 
+  <view class="drawer_content drawer_sendTime clearfix">
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 260px;" value="{{value}}" bindchange="bindSendTimeChange">
+    <picker-view-column>
+      <view wx:for="{{dates}}" wx:key="months" style="line-height: 50px;">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{times}}" wx:key="days" style="line-height: 50px">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+  </view>
+  <view class="btn btnBlue btn_ok" bindtap="confirmDoneDate">确定</view> 
+</view>
+<view class="drawer_screen" bindtap='closeSendTimeBox' hidden="{{showSendTimeBox}}"></view>
+</template>
+
+<template name="sendTimeLocation">
+<view class="drawer_box">
+  <view class="drawer_title clearfix">配送时间</view> 
+  <view class="drawer_content drawer_sendTime clearfix">
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 260px;" value="{{value}}" bindchange="bindSendTimeChange">
+    <picker-view-column>
+      <view wx:for="{{dates}}" wx:key="months" style="line-height: 50px;">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{times}}" wx:key="days" style="line-height: 50px">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+  </view>
+</view>
+</template>

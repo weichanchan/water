@@ -1,0 +1,34 @@
+<view class="container containerBottomPad">
+<view class='contentWidtn'>
+<view class="searchBox clearfix">
+    <image src='/images/icon_search.png'></image><input name="key" type="text" confirm-type='search' bindinput='bindKeywordInput' bindconfirm='confirmSearch' focus='true' class="keyword" value="{{keyword}}" placeholder="请输入商品名称" placeholder-class='placeholder' />
+  </view>
+
+<view class='screenWrap shadow clearfix'>
+<view class="section" bindtap='showSelectionBrandsBox'>
+  <text>{{brandsText}}</text><view class='arrow'></view>
+</view>
+<view class="section" bindtap='showSelectionClassificationBox'>
+  <text>{{classificationText}}</text><view class='arrow'></view>
+</view>
+<view class="section sort" bindtap='showPriceSortingBox'>
+  <text>{{priceSortingText}}</text><view class='arrow'></view>
+</view>
+</view>
+
+<view class='goodsDetailsList'>
+<template is="oneDetailsGoods" data="{{goods,noData,inCart,inCartNum}}"></template>
+</view>
+
+</view>
+</view>
+
+<import src="/template/goods.wxml"/>
+<template is="bottomShoppingCart" data="{{cartTotal,carBotPad}}"></template>
+
+<import src="/template/popupBox.wxml"/>
+<template is="selectionBrands" data="{{showSelectionBrandsBox,brands,brandsKey}}"></template>
+<template is="selectionClassification" data="{{showSelectionClassificationBox,bucketType,bucketKey,waterType,waterKey}}"></template>
+<template is="priceSorting" data="{{showPriceSortingBox,priceSorting,sortKey}}"></template>
+
+<template is="good_box" data="{{hide_good_box,bus_x,bus_y}}"></template>

@@ -1,0 +1,59 @@
+<import src="/template/goods.wxml"/>
+<view class="container containerBottomPad">
+<view class='contentWidtn'>
+
+<view class='orderDetails editOperation shadow'>
+<view class='orderTime labelSentence'>
+<text class='label'>下单时间</text><text class='con time'>{{creationTime}}</text>
+</view>
+<view class='stateWrap labelSentence'>
+<text class='label'>订单状态</text><text class='con state'>{{status}}</text>
+</view>
+<view class='priceWrap labelSentence'>
+<text class='label'>合计金额</text><text class='con price priceRed'>￥{{amountTotal}}</text>
+</view>
+</view>
+
+<!--//oneOrder-->
+<template is="oneOrder" data="{{goodsList,amount,noData}}"></template>
+<!--//oneOrder-->
+
+<template is="deposit" data="{{isOrderDetails,deposit,bucketNum,hasDeposit}}"></template>
+
+<view class='editOperation shadow clearfix'>
+
+<template is="orderDetailsAddress" data="{{name,address,sex,phone}}"></template>
+<view class='line'></view>
+<view class='expectedTime labelSentence clearfix'>
+<text class='label'>期望时间</text><text class='con time'>{{deliveryTime}}</text>
+</view>
+<view class='remarksWrap labelSentence clearfix'>
+<text class='label'><text class='bei'>备</text>注</text><text class='con remarks'>{{remark}}</text>
+</view>
+</view>
+
+
+<view class='distributor editOperation shadow clearfix'>
+<view class='stationWrap labelSentence'>
+<text class='label'>配送水站</text><text class='con station'>{{senderSite}}</text>
+</view>
+<view class='senderWrap labelSentence'>
+<text class='label'>配送员姓名</text><text class='con sender'>{{senderName}}</text>
+</view>
+<view class='phoneWrap labelSentence' bindtap='callThePhone'>
+<text class='label'>配送员手机</text><text class='con phone'>{{senderPhone}}</text><image src='/images/phone.png' class='icon_phone'></image>
+</view>
+</view>
+
+
+</view>
+</view>
+
+
+<view class='evaluateWrap bottomBtnWrap'>
+<button hidden='{{!gotoPay}}' class='btn btnOrange' bindtap='gotoPay' hover-class='button-hover'>微信支付：{{amountTotal}}元</button>
+<button hidden='{{!gotoEvaluate}}' class='btn btnOrange' bindtap='gotoEvaluate'>去评价</button>
+<button hidden='{{!ifEvaluated}}' class='btn btnWhite'>已评价</button>
+</view>
+<import src="/template/popupBox.wxml"/>
+<template is="aboutDeposit" data="{{showAboutDepositBox}}"></template>

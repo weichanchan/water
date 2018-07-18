@@ -1,0 +1,15 @@
+<view class="container containerBottomPad">
+<view class='contentWidtn'>
+
+<import src="/template/goods.wxml"/>
+<view class='goodsDetailsList'>
+<template is="oneDetailsGoods" data="{{goods,noData,inCart,inCartNum}}"></template>
+</view>
+
+
+</view>
+</view>
+<view class='bottomBtnWrap'>
+<button class='btn btnOrange' hover-class='button-hover' bindtap='goodChioceGoods'>选好了</button>
+</view>
+

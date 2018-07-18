@@ -1,0 +1,9 @@
+<view class="container containerBottomPad">
+
+<import src="/template/popupBox.wxml"/>
+<template is="remarksLocation" data="{{showRemarksBox,remarks,max,currentWordNumber}}"></template>
+
+</view>
+<view class='bottomBtnWrap'>
+<button class='btn btnOrange' hover-class='button-hover' bindtap='goodChioceRemarks'>填好了</button>
+</view>

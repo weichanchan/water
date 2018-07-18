@@ -1,0 +1,7 @@
+.shadow{padding:20rpx;}
+.title{text-align: center;line-height:100rpx;font-size: 36rpx;color: #0097ff;}
+.year{color: #0097ff;padding-bottom: 20rpx;}
+.p{text-indent:2em;padding-bottom: 20rpx;color: #666;line-height: 56rpx;}
+.bah{text-align: center;}
+.spxkz{width:670rpx;height:473rpx;}
+.yyzz{width:670rpx;height:921rpx;}

@@ -1,0 +1,14 @@
+.oneDetailsGoods {margin:0 0 20rpx;}
+.oneDetailsGoods navigator {padding: 20rpx;}
+.oneDetailsGoods .checkbox{float:left;margin-top: 80rpx;}
+.oneDetailsGoods .info{float:right;width:650rpx;}
+
+.settlementWrap{}
+.settlementWrap .allSelect{float:left;width:160rpx;height:96rpx;line-height:96rpx;border-top:1rpx solid #d5d5d5; font-size: 26rpx;text-align: center;}
+.settlementWrap .allSelect .checkbox{float:left;margin:22rpx 8rpx 0 26rpx;}
+.settlementWrap .allSelect text{float:left;}
+.settlementWrap .settlement{float:right;width:590rpx;}
+
+.oneDetailsGoods .buySum{bottom:15rpx;}
+
+

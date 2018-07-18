@@ -1,0 +1,49 @@
+<view class="mapContainer container">
+  <map id="myMap" longitude="{{locationY}}" latitude="{{locationX}}" markers="{{markers}}" bindcallouttap="sendThisAddress" bindcontroltap="controltap" bindmarkertap="markertap" bindregionchange="regionchange" show-location style="width: 100%; height:100vh;">
+
+    <cover-view class='bottomGoodsDetailds'>
+      <cover-view class='contentWidtn'>
+        <cover-view class='myAddress editOperation shadow' bindtap='getUserAddress'>
+          <cover-view class='label'>送到这里</cover-view>
+          <cover-image class='arrow' src='/images/arrow.png'></cover-image>
+          <cover-view class='detail'>{{addressDetail}}</cover-view>
+        </cover-view>
+
+        <cover-view class='myAddress editOperation shadow' bindtap='getChoiceGoods'>
+          <cover-view class='label'>选择商品</cover-view>
+          <cover-image class='arrow' src='/images/arrow.png'></cover-image>
+          <cover-view class='detail' hidden='{{hadChoice}}'>已选择{{cartTotal}}件</cover-view>
+        </cover-view>
+
+        <cover-view class='myAddress editOperation shadow' bindtap="getChoiceDate" hidden='{{isOpenTime}}'>
+          <cover-view class='label'>配送时间</cover-view>
+          <cover-image class='arrow' src='/images/arrow.png'></cover-image>
+          <cover-view class='detail'>{{deliveryTime}} 配送</cover-view>
+        </cover-view>
+
+        <cover-view class='myAddress editOperation shadow' bindtap="showDepositBox" hidden='{{!hasDeposit}}'>
+          <cover-view class='label'>选择押金</cover-view>
+          <cover-image class='arrow' src='/images/arrow.png'></cover-image>
+          <cover-view class='detail'>{{deposit}} 元</cover-view>
+        </cover-view>
+        
+        <cover-view class='myAddress editOperation shadow' bindtap="getRemarks">
+          <cover-view class='label'>备注</cover-view>
+          <cover-image class='arrow' src='/images/arrow.png'></cover-image>
+          <cover-view class='detail'>{{remarks}}</cover-view>
+
+        </cover-view>
+
+      </cover-view>
+
+      <cover-view class='btnWrap'>
+<cover-view class='btn btnOrange' hidden='{{dataFull}}'>请填写订单信息</cover-view>
+       <cover-view class='btn btnOrange' bindtap='gotoPay' hidden='{{!dataFull}}'>微信支付：{{amountTotal}}元</cover-view>
+      </cover-view>
+    </cover-view>
+
+  </map>
+</view>
+
+<import src="/template/popupBox.wxml"/>
+<template is="deposit" data="{{showDepositBox,depositsKey,deposits}}"></template>

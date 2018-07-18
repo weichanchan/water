@@ -1,0 +1,65 @@
+/*---商品详细列表---*/
+.oneDetailsGoods {min-height: 200rpx;position: relative;margin-top:46rpx;}
+.oneDetailsGoods navigator {padding:20rpx; }
+.oneDetailsGoods .pic{float:left;width:200rpx;position: absolute;top:-20rpx;left:20rpx;}
+.oneDetailsGoods image{width:200rpx; height:200rpx;border-radius: 10rpx;box-shadow: 0 0 10rpx #ddd;}
+.oneDetailsGoods .info{float:right;width:440rpx;}
+.oneDetailsGoods .name{height: 96rpx;line-height: 48rpx;overflow: hidden;}
+.oneDetailsGoods .name text{color: #333;font-size:32rpx;}
+.oneDetailsGoods .sales text{color: #0097fe;font-size:28rpx;}
+.oneDetailsGoods .type{line-height:30rpx;padding-bottom: 5rpx;}
+.oneDetailsGoods .type text{color: #aaa;font-size: 24rpx;}
+.oneDetailsGoods .price{line-height:30rpx;}
+.oneDetailsGoods .cuti{font-weight: bold;}
+.oneDetailsGoods .original{font-size: 24rpx;text-decoration:line-through;padding-right:20rpx;color: #999;}
+.oneDetailsGoods .present{font-size: 28rpx;}
+
+.oneDetailsGoods .buySum{width: 200rpx;height:42rpx;padding:40rpx 20rpx 20rpx 0; position:absolute;right:0;bottom:0;}
+.oneDetailsGoods .buySum .func{float:right;width:42rpx;height: 42rpx; line-height: 34rpx;text-align: center;border-radius:100%; font-size: 44rpx; background: #fff;color: #0097ff;border: 1rpx solid #0097ff;}
+.oneDetailsGoods .buySum .add{ background: #0097ff;color: #fff;}
+.oneDetailsGoods .buySum .number{float:right;width:50rpx;line-height: 44rpx;font-size: 26rpx; text-align: center;}
+
+.noData{color: #999;padding: 30rpx 0; text-align: center;}
+
+/*---订单---*/
+.goodsAndCash {line-height: 90rpx;font-size: 32rpx;padding:0 20rpx;}
+.goodsAndCash .hd {height: 40rpx;line-height: 40rpx;padding-top:10rpx; overflow: hidden;}
+.goodsAndCash .hd text{font-size: 24rpx;}
+.goodsAndCash .hd .fl text{color: #666;}
+.goodsAndCash .hd .fr text{float: right;}
+.goodsAndCash .hd .icon_help{float: right;width:24rpx;height:24rpx;margin: 28rpx 10rpx 0 0;}
+.goodsAndCash .goodsSimpleList{border-bottom: 1rpx solid #e5e5e5;}
+.goodsAndCash .name,.goodsAndCash .bucket,.goodsAndCash .price{display: block;float: left;line-height:80rpx;}
+.goodsAndCash .name{width: 310rpx;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.goodsAndCash .bucket{width: 140rpx;text-align: center;font-size: 24rpx;color: #666;}
+.goodsAndCash .price{float: right;width:220rpx;text-align: right;}
+.goodsAndCash .bucketCash{border-bottom: 1rpx solid #e5e5e5;}
+.goodsAndCash .total{text-align: right;}
+
+/*---押金---*/
+.depositWrap.shadow{padding:0 20rpx;}
+.depositWrap .editOperation{margin-bottom:0;border-radius:0;padding-left:0;padding-right:0;}
+.depositWrap .deposit{border-bottom: 1rpx solid #e5e5e5;}
+.depositWrap .deposit .priceRed{color: #ff3144;}
+
+/*---订单地址---*/
+.oneAddress navigator {padding: 20rpx;}
+.oneAddress .my{ line-height: 32rpx;padding-right: 40rpx;}
+.oneAddress .user{padding-bottom: 10rpx;}
+.oneAddress .name{padding-right: 20rpx;}
+.oneAddress .address{line-height: 32rpx;height: 64rpx;overflow: hidden;}
+.oneAddress .address text{font-size: 24rpx;color: #aaa;}
+.oneAddress .icon_position{margin-top:36rpx;}
+
+/*----底部购物车---*/
+.shoppingCart {position:fixed;bottom:40rpx;left: 40rpx;}
+.shoppingCartBottomBtnPad {bottom:120rpx;}
+.shoppingCart navigator{display: block; width:100rpx;height:100rpx; border-radius: 100%; text-align: center;background: #fff;box-shadow: 0 0 10rpx #ddd;}
+.shoppingCart .cart{width:49rpx;height:48rpx; margin: 0 auto;margin-top: 28rpx;}
+.shoppingCart .num{display: block;width: 36rpx;height: 36rpx;line-height: 30rpx;text-align: center;background: #ff3144;border-radius: 100%;font-size: 22rpx;color: #fff;position: absolute;top:7rpx;left:60rpx;}
+
+.bottomBtnWrap {width:100%; position: fixed;bottom: 0;}
+.containerBottomPad{padding-bottom: 200rpx;}
+
+/*----抛物线小球---*/
+.good_box{width: 12px;height: 12px;position: fixed;border-radius: 50%;overflow: hidden;left: 50%;top: 50%;z-index: +99;background: #ff3144;}

@@ -1,0 +1,9 @@
+/**index.wxss**/
+.userinfo {display: flex;flex-direction: column;align-items: center;padding-top:140rpx;}
+.userinfo button{width:710rpx;height:100rpx; line-height:100rpx; background: #3eafff;color: #fff;}
+.userinfo-avatar {width: 128rpx;height: 128rpx;margin: 20rpx;border-radius: 50%;}
+.userinfo-nickname {color: #aaa;}
+.usermotto {margin-top: 100rpx;}
+
+.fanhui{padding-top: 80rpx;}
+.fanhui .fhBtn{color: #ccc;}

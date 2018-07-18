@@ -1,0 +1,40 @@
+<view class="container">
+<view class='bgBlue'></view>
+
+<view class='contentWidtn'>
+
+<view class='myBaseInfo editOperation shadow'>
+<block wx:if="{{isLogin}}">
+<view class='userHead tc' bindtap='gotoLogin'>
+<view class='headPic'><image src='{{avatarUrl}}'></image></view>
+<view class='name'><text>{{username}}</text></view>
+</view>
+</block>
+<block wx:else>
+<view class='userHead tc'>
+<view class='headPic' bindtap='gotoLogin'><image src='/images/defaultHead.png'></image></view>
+<view class='name' bindtap='gotoLogin'><text>请点击登录</text></view>
+</view>
+</block>
+<view class='centerLine'>
+<view class='border'>
+<view class='myDeposit editOperation Triangle'>
+<navigator url='/pages/water/user/deposit/deposit'><text class='label'>我的押金</text><text class='detail'>{{myDeposit}}元</text></navigator></view>
+</view>
+<view class='myAddress editOperation Triangle'>
+<navigator url='/pages/water/user/address/address'><text class='label'>我的收货地址</text><text class='detail'>{{addressNum}}</text></navigator></view>
+</view>
+</view>
+<view class='about editOperation shadow Triangle'>
+<navigator url='/pages/water/user/about/about'><text class='label'>关于我们</text></navigator>
+</view>
+<view class='about editOperation shadow Triangle'>
+<navigator url=''><text class='label'>使用帮助</text></navigator>
+</view>
+<button class='about editOperation shadow' open-type="contact" >联系客服</button>
+
+
+</view>
+</view>
+<import src="/template/goods.wxml"/>
+<template is="bottomShoppingCart" data="{{cartTotal,carBotPad}}"></template>

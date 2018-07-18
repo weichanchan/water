@@ -1,0 +1,46 @@
+<form bindsubmit="formSubmit">
+<view class="container">
+<!--oneGoodsEvaluate-->
+<view class='oneGoodsEvaluate' wx:for='{{goods}}' wx:key='goods' data-index="{{index}}">
+<view class='bgWhite clearfix'>
+<view class='headPic fl'><image src='{{item.img}}'></image></view>
+<view class='info fr'>
+<view class='goodsName'><text>{{item.name}}</text></view>
+<!--star-->
+<view class='starWrap clearfix'>
+<image wx:for='{{item.level}}' wx:for-index='key' wx:for-item='level' wx:key='level' src="/images/star{{level.score>0?'Full':''}}.png" data-id="{{level.id}}" bindtap='clickGoodsStar' data-index="{{key}}"></image>
+</view>
+<!--//star-->
+</view>
+</view>
+<view class='textWrap'><textarea placeholder='请评价该商品' placeholder-class='placeholder' value='{{item.comment}}' bindinput="bindGoodsComment" data-index="{{index}}"></textarea></view>
+</view>
+<!--//oneGoodsEvaluate-->
+
+<!--senderEvaluate-->
+<view class='senderEvaluateWrap'>
+<view class='senderEvaluate'>
+<view class='userHead tc'>
+<view class='headPic'><image wx:if='{{hadSenderHead}}' src='{{senderHead}}'></image>
+<image wx:else src='/images/defaultHead.png'></image></view>
+<view class='name'><text>{{senderName}}</text></view>
+<view class='phone'><text>{{senderPhone}}</text></view>
+</view>
+
+<view class='pfTit'><text>请为我评分</text></view>
+
+<view class='starWrap clearfix'>
+<image wx:for='{{senderScore}}' wx:key='senderScore' src="/images/star{{senderScore[index]>0?'Full':''}}.png" bindtap='clickSenderStar' data-index='{{index}}'></image>
+</view>
+
+<view class='textWrap'><textarea placeholder='请对本次配送进行评价' placeholder-class='placeholder' value='{{senderComment}}' bindinput="bindSenderComment"></textarea></view>
+</view>
+<image src='/images/evaluate_sender_bg.png' class='senderEvaluate_bg'></image>
+</view>
+<!--//senderEvaluate-->
+
+</view>
+<view class='btnWrap'>
+<button formType="submit" class='btn btnOrange' hover-class='button-hover'>提交</button>
+</view>
+</form>

@@ -1,0 +1,5 @@
+.searchBox{height:60rpx;background: #fff;border-radius: 30rpx;margin-bottom: 20rpx;}
+.searchBox image{float: left;width: 31rpx;height: 32rpx;margin: 12rpx 10rpx 0 20rpx;}
+.searchBox .keyword{float: left;width:620rpx;height: 60rpx;color: #666;font-size: 26rpx;}
+
+.screenWrap .section{width:230rpx;}

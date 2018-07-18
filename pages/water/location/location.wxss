@@ -1,0 +1,11 @@
+.mapContainer{}
+
+.bottomGoodsDetailds{width:100%; position: fixed;bottom: 0;}
+.bottomGoodsDetailds .contentWidtn{padding:0 20rpx 10rpx; }
+.bottomGoodsDetailds .myAddress{opacity: 0.94;margin-bottom:10rpx;}
+
+.editOperation .label{float: left;line-height:90rpx;}
+.editOperation .detail{float: right;line-height:90rpx;padding-right: 30rpx;}
+.editOperation .arrow{float: right;width: 14rpx;height: 24rpx;margin: 30rpx 20rpx 0 0;}
+
+.btnLocation{width: 750rpx;height: 100rpx;}

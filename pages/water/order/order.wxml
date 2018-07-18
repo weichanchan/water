@@ -1,0 +1,12 @@
+<import src="/template/goods.wxml"/>
+<view class="container">
+<view class='contentWidtn'>
+
+<!--//oneOrder-->
+<template is="OrderList" data="{{orders,noData,hasDeposit}}"></template>
+<!--//oneOrder-->
+
+</view>
+</view>
+
+<template is="bottomShoppingCart" data="{{cartTotal,carBotPad}}"></template>

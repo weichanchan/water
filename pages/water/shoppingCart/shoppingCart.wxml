@@ -1,0 +1,38 @@
+<view class="container containerBottomPad">
+
+<view class='contentWidtn'>
+<!--oneGoods-->
+<view class='oneDetailsGoods clearfix' wx:for="{{cartItems}}" wx:key="unique">
+
+<icon wx:if="{{item.selected}}" class="checkbox" type="success" color="#ffa20d" bindtap="selectList" data-index="{{index}}" />
+        <icon wx:else type="circle" color="#aaa" class="checkbox" bindtap="selectList" data-index="{{index}}"/>
+
+<view class='info shadow'>
+<navigator url="/pages/water/goods/details?id={{item.id}}">
+<view class='name'><text>{{item.name}}</text></view>
+<view class='type'><text>{{item.productSpecifications}}；{{item.bucketType}}</text></view>
+<view class='price'><!--<text class='original'>¥ {{item.amountShow}}/桶</text>--><text class='present priceRed'>¥ <text class='cuti'>{{item.amount}}</text></text>
+</view>
+</navigator>
+</view>
+<view class='buySum'><view class='func add' bindtap="addCount" data-index="{{index}}">+</view><view class='number'>{{item.count}}</view><view class='func minus' bindtap="minusCount" data-index="{{index}}">-</view></view> 
+</view>
+<!--//oneGoods-->
+
+<view class='noData' hidden="{{hasList}}">购物车是空的哦~</view>
+
+</view>
+
+<view class='settlementWrap bgWhite bottomBtnWrap clearfix'>
+<view class='allSelect'>
+<icon wx:if="{{selectAllStatus}}" class="checkbox" type="success" color="#ffa20d" bindtap="selectAll"/>
+    <icon wx:else type="circle" class="checkbox" color="#aaa" bindtap="selectAll"/><text>全选</text>
+  </view>
+<button bindtap='gotoOrderConfirme' class='settlement btn btnOrange'>去结算：￥{{totalPrice}}</button>
+</view>
+</view>
+
+
+<import src="/template/popupBox.wxml"/>
+<template is="shoppingCartDeleteGoods" data="{{showPopupBox}}"></template>
+

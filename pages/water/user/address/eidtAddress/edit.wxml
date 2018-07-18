@@ -1,0 +1,25 @@
+<view class="container">
+<view class='contentWidtn'>
+<form bindsubmit="formSubmit">
+<view class='myName editOperation shadow Triangle'><text class='label'>姓名</text><view class='detail detailInput'><input type='text' bindinput='bindNameInput' value='{{name}}' /></view></view>
+
+<view class='mySex editOperation shadow Triangle' bindtap='showSexBox'><text class='label'>性别</text><text class='detail'>{{sexArray[sexKey].value}}</text></view>
+<view class='myPhone editOperation shadow Triangle'><text class='label'>手机号</text><view class='detail detailInput'><input type='text' bindinput='bindPhoneInput' value='{{phone}}' /></view></view>
+
+<view class='myAddress editOperation shadow Triangle' bindtap='chooseAddressLocation'>
+<text class='label'>定位地址</text><text class='detail'>{{address}}</text></view>
+<view class='myDetailedAddress'>
+<textarea class='shadow' hidden="{{textShow}}" placeholder="请填写详细地址" value='{{addressDetail}}' placeholder-class='placeholder' bindinput="bindAddressInput" />
+</view>
+
+<view class='btnWrap'>
+<button class='saveBtn btn btnBlue' formType="submit" hover-class='button-hover'>保存</button>
+<button class='deleteBtn btn btnGray' bindtap='deleteAddress' hover-class='button-hover'>删除</button>
+</view>
+
+  </form>
+</view>
+</view>
+
+<import src="/template/popupBox.wxml"/>
+<template is="sex" data="{{showSexBox,sexArray,sexText,sexKey}}"></template>

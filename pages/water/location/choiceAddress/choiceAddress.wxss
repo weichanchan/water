@@ -1,0 +1,5 @@
+.oneAddress {position:relative;}
+.oneAddress .checkbox{float:left;margin-top: 46rpx;}
+.oneAddress .info{float:right;width:610rpx;padding: 20rpx;}
+.addressClick{}
+.oneAddress navigator{display: block; width:40rpx;height:110rpx;  position:absolute;top:0;right: 0;}

@@ -1,0 +1,170 @@
+<!--商品详细列表-->
+<template name="oneDetailsGoods">
+<view class='oneDetailsGoods shadow clearfix' wx:for="{{goods}}" wx:key="goods">
+<navigator url="/pages/water/goods/details?id={{item.id}}" class='clearfix'>
+<view class='pic'><image src='{{item.img}}'></image></view>
+<view class='info'>
+<view class='name'><text>{{item.name}}</text></view>
+<!--<view class='sales'><text>部分满2件打7折</text></view>-->
+<view class='type'><text>{{item.productSpecifications}}；{{item.bucketType}}</text></view>
+<view class='price priceRed'><!--<text class='original'>¥ {{item.amountShow}}/桶</text>--><text class='present'>¥ <text class='cuti'>{{item.amount}}</text></text>
+</view>
+</view></navigator>
+<view class='buySum'><view class='func add' bindtap="addCount" data-index="{{index}}">+</view><view class='number' hidden='{{inCart[index]}}'>{{inCartNum[index]}}</view><view class='func minus' hidden='{{inCart[index]}}' bindtap="minusCount" data-index="{{index}}">-</view></view>
+</view>
+<view class='noData' hidden="{{noData}}">没有商品哦~</view>
+</template>
+
+<!--订单模板-->
+<!--订单列表-->
+<template name="OrderList">
+<view class='oneOrder goodsAndCash shadow clearfix' wx:for="{{orders}}" wx:key="orders">
+<navigator url="/pages/water/order/details/details?id={{item.id}}" class='clearfix'>
+<view class='hd clearfix'>
+<view class='fl'><text>{{item.creationTime}}</text></view>
+<view class='fr'><text>{{item.status}}</text></view>
+</view>
+<view class='goodsSimpleList clearfix'>
+<view class='oneSimpleGoods clearfix' wx:for="{{item.detail}}" wx:if="{{index<5}}" wx:key="detail">
+<text class='name'>{{item.productName}}</text>
+<text class='bucket'>x {{item.count}}</text>
+<text class='price priceRed'>¥ {{item.amount*item.count}}元</text>
+</view>
+</view>
+<view class='bucketCash clearfix' hidden='{{item.hasDeposit}}'>
+<text class='name'>桶押金</text>
+<text class='bucket'>x {{item.bucketNum}}</text>
+<text class='price'>¥ {{item.deposit}}元</text>
+</view>
+<view class='total priceRed'>¥ {{item.amountTotal}}元</view>
+</navigator>
+</view>
+<view class='noData' hidden="{{noData}}">没有订单哦~</view>
+</template>
+
+<!--确认订单、订单详情页面-->
+<template name="oneOrder">
+<view class='oneOrder goodsAndCash shadow clearfix'>
+<view class='goodsSimpleList clearfix'>
+<view class='oneSimpleGoods clearfix' wx:for="{{goodsList}}" wx:key="goodsList">
+<navigator url="/pages/water/goods/details?id={{item.productInfoId}}" class='clearfix'>
+<text class='name'>{{item.productName}}</text>
+<text class='bucket'>x {{item.count}}</text>
+<text class='price priceRed'>¥ {{item.amount*item.count}}元</text>
+</navigator>
+</view>
+</view>
+<view class='total priceRed'>¥ {{amount}}元</view>
+</view>
+<view class='noData' hidden="{{noData}}">没有订单哦~</view>
+</template>
+
+<!--押金选择-->
+<template name="deposit">
+<block wx:if="{{isOrderDetails}}">
+<view class='depositWrap shadow centerLine' hidden='{{hasDeposit}}'>
+<view class='deposit editOperation Triangle'>
+<text class='label'>押金</text><text class='detail priceRed'>{{bucketNum}}桶，¥{{deposit}}</text></view>
+<view class='aboutDeposit editOperation Triangle' bindtap="showAboutDepositBox">
+<text class='label'>关于押金</text>
+</view>
+</view>
+</block>
+<block wx:else>
+<view class='depositWrap shadow centerLine' hidden='{{hasDeposit}}'>
+<view class='deposit editOperation Triangle' bindtap="showDepositBox">
+<text class='label'>押金</text><text class='detail priceRed'>{{bucketNum}}桶，￥{{deposit}}</text>
+</view>
+<view class='aboutDeposit editOperation Triangle' bindtap="showAboutDepositBox">
+<text class='label'>关于押金</text>
+</view>
+</view>
+</block>
+
+</template>
+
+<!--地址模板-->
+<!--订单详情地址-->
+<template name="orderDetailsAddress">
+<view class='oneAddress'>
+<image src='/images/position.png' class='icon_position'></image>
+<view class='my address'>
+<text>{{address}}{{addressDetail}}</text>
+</view>
+<view class='my user'>
+<text class='name'>{{name}}{{sex}}</text><text class='phone'>{{phone}}</text>
+</view>
+</view>
+</template>
+
+<!--我的地址列表-->
+<template name="oneAddress">
+<view class='oneAddress editOperation shadow Triangle' wx:for="{{address}}" wx:key="unique">
+<navigator url='/pages/water/user/address/eidtAddress/edit?id={{item.id}}'>
+<view class='my user'><text class='name'>{{item.name}}{{item.sex}}</text><text class='phone'>{{item.phone}}</text></view>
+<view class='my address'>
+<text>{{item.address}}{{item.addressDetail}}</text>
+</view>
+</navigator>
+</view>
+<view class='noData' hidden="{{noData}}">没有数据哦~</view>
+</template>
+
+<!--一键送水的选择地址-->
+<template name="choiceAddress">
+<view class='oneAddress clearfix' wx:for="{{address}}" wx:key="unique">
+
+<view class='addressClick clearfix' bindtap="selectList" data-index="{{index}}">
+<icon wx:if="{{item.selected}}" class="checkbox" type="success" color="#ffa20d" />
+<icon wx:else type="circle" color="#aaa" class="checkbox"/>
+<view class='info editOperation shadow Triangle'>
+<view class='my user'><text class='name'>{{item.name}}{{item.sexText}}</text><text class='phone'>{{item.phone}}</text></view>
+<view class='my address'>
+<text>{{item.address}}{{item.addressDetail}}</text>
+</view>
+</view>
+</view>
+
+<navigator url='/pages/water/user/address/eidtAddress/edit?id={{item.id}}'>
+</navigator>
+
+</view>
+<view class='noData' hidden="{{noData}}">没有数据哦~</view>
+</template>
+
+<!--确认订单的选择地址-->
+<template name="orderConfirmAddress">
+<block wx:if="{{ifSelectedAddress}}">
+<view class='oneAddress editOperation shadow Triangle'>
+<navigator url='/pages/water/location/choiceAddress/choiceAddress?id={{userAddressID}}'>
+<image src='/images/position.png' class='icon_position'></image>
+<view class='my user'><text class='name'>{{userName}}{{userSex}}</text><text class='userPhone'>{{phone}}</text></view>
+<view class='my address'>
+<text>{{userAddress}}</text>
+</view>
+</navigator>
+</view>
+</block>
+<block wx:else>
+<view class='noAddress editOperation shadow Triangle'>
+<navigator url='/pages/water/location/choiceAddress/choiceAddress'>
+<image src='/images/position.png' class='icon_position'></image>
+<text>请选择收货地址</text>
+</navigator>
+</view>
+</block>
+</template>
+
+
+<!--底部购物车-->
+<template name="bottomShoppingCart">
+<view class='shoppingCart {{carBotPad?"shoppingCartBottomBtnPad":""}} clearfix'>
+<navigator url='/pages/water/shoppingCart/shoppingCart'><image src='/images/shoppingCart.png' class='cart'></image><text class='num'>{{cartTotal}}</text></navigator>
+</view>
+</template>
+
+ <!--抛物线小球-->
+<template name="good_box">
+  <view class="good_box" hidden="{{hide_good_box}}"  style="left: {{bus_x}}px; top: {{bus_y}}px;">
+  </view>
+  </template>

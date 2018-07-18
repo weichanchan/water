@@ -1,0 +1,15 @@
+<view class="container containerBottomPad">
+<view class='contentWidtn'>
+<view class='addressList'>
+<!--//oneAddress-->
+<import src="/template/goods.wxml"/>
+<template is="choiceAddress" data="{{address,isLocation,noData}}"></template>
+<!--//oneAddress-->
+</view>
+
+</view>
+</view>
+
+<view class='bottomBtnWrap'>
+<navigator url='/pages/water/user/address/eidtAddress/edit?isLocation=1' class='btn btnOrange'>新增收货地址</navigator>
+</view>

@@ -1,0 +1,63 @@
+<view class="container containerBottomPad">
+<view class="banner">
+<view class='city'><image src='/images/icon_city.png'></image><text>{{nowCity}}</text></view>
+<view class='city_bg'><image src='/images/icon_city.png'></image><text>{{nowCity}}</text></view>
+<swiper class='banner_swiper' indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="unique">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+<button bindtap="changeIndicatorDots"></button>
+</view>
+
+<view class='contentWidtn'>
+
+<view class='functionNav shadow clearfix'>
+<view class='fl func sendWater' bindtap='gotoLocation'>
+<image src='/images/icon_sendWater.png'></image><text>一键送水</text>
+</view>
+<view class='fl func waterTicket'>
+<image src='/images/icon_waterTicket.png'></image><text>运泉来水票</text>
+</view>
+<view class='fl func waterPeople'>
+<image src='/images/icon_waterPeople.png'></image><text>成为推广人</text>
+</view>
+</view>
+
+<view class='screenWrap shadow clearfix'>
+<view class="section" bindtap='showSelectionBrandsBox'>
+  <text>{{brandsText}}</text><view class='arrow'></view>
+</view>
+<view class="section" bindtap='showSelectionClassificationBox'>
+  <text>{{classificationText}}</text><view class='arrow'></view>
+</view>
+<view class="section sort" bindtap='showPriceSortingBox'>
+  <text>{{priceSortingText}}</text><view class='arrow'></view>
+</view>
+<view class="searchBox clearfix">
+  <navigator url='/pages/water/search/search'>
+    <image src='/images/icon_search.png'></image>
+    </navigator>
+  </view>
+</view>
+
+<view class='goodsDetailsList'>
+<template is="oneDetailsGoods" data="{{goods,noData,inCart,inCartNum}}"></template>
+</view>
+
+</view>
+</view>
+
+<import src="/template/goods.wxml"/>
+<template is="bottomShoppingCart" data="{{cartTotal,carBotPad}}"></template>
+
+<import src="/template/popupBox.wxml"/>
+<template is="selectionBrands" data="{{showSelectionBrandsBox,brands,brandsKey}}"></template>
+<template is="selectionClassification" data="{{showSelectionClassificationBox,bucketType,bucketKey,waterType,waterKey}}"></template>
+<template is="priceSorting" data="{{showPriceSortingBox,priceSorting,sortKey}}"></template>
+<template is="currentCity" data="{{showCurrentCityBox,nowCity}}"></template>
+
+<template is="good_box" data="{{hide_good_box,bus_x,bus_y}}"></template>

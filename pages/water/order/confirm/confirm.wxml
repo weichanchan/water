@@ -1,0 +1,35 @@
+<import src="/template/goods.wxml"/>
+
+<view class="container containerBottomPad">
+<view class='contentWidtn'>
+
+<!--//oneAddress-->
+<template is="orderConfirmAddress" data="{{userAddressID,userAddress,userName,userSex,userPhone,ifSelectedAddress}}"></template>
+<!--//oneAddress-->
+
+<!--//oneOrder-->
+<template is="oneOrder" data="{{goodsList,noData,amount}}"></template>
+<!--//oneOrder-->
+
+<template is="deposit" data="{{deposit,deposits,bucketNum,depositsKey,isOrderDetails,hasDeposit}}"></template>
+
+<view class='sendTime editOperation shadow Triangle' bindtap="showSendTimeBox" hidden='{{isOpenTime}}'>
+<text class='label'>配送时间</text><text class='detail'>{{deliveryTime}} 配送</text></view>
+
+<view class='remarks editOperation shadow Triangle' bindtap="showRemarksBox">
+<text class='label'>添加备注</text><text class='detail'>{{remarks}}</text></view>
+
+<!--<view class='editOperation myPhone'><text class='label'>开具发票</text><view class='detail detailNoPadding'><switch bindchange="invoiceSwitchChange"/></view></view>
+
+<view id='invoiceDetails' hidden="{{display}}" class='editOperation myPhone Triangle'><text class='label'>发票抬头</text><view class='detail detailInput'><input type='text' value='' placeholder='请填写发票抬头' placeholder-class='placeholder' /></view></view>-->
+</view>
+</view>
+<view class='bottomBtnWrap'>
+<button class='btn btnOrange' bindtap='gotoPay' hover-class='button-hover'>微信支付：{{amountTotal}}元</button>
+</view>
+
+<import src="/template/popupBox.wxml"/>
+<template is="remarks" data="{{showRemarksBox,remarks,max,currentWordNumber}}"></template>
+<template is="aboutDeposit" data="{{showAboutDepositBox}}"></template>
+<template is="deposit" data="{{showDepositBox,depositsKey,deposits}}"></template>
+<template is="sendTime" data="{{showSendTimeBox,dates,times,date,time,value}}"></template>

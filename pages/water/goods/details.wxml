@@ -1,0 +1,78 @@
+<view class="container containerBottomPad">
+
+<view class="bgWhite goodsBaseInfo">
+<view class="banner">
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="unique">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+<button hidden='ture' bindtap="changeIndicatorDots">indicator-dots </button>
+</view>
+
+<view class='contentWidtn'>
+
+<view class='goodsName'>
+<text>{{name}}</text></view>
+
+<view class='typeWrap clearfix'>
+<text class='type fl'>{{productSpecifications}}；{{bucketType}}</text><!--<text class='price original fr'>¥ {{amountShow}}/桶</text>--></view>
+<view class='priceWrap clearfix'><text class='kucun fl'>库存<text class='priceRed'>{{stock}}</text></text><text class='kucun fl'>已售<text class='priceRed'>{{count}}</text></text><text class='price priceRed present fr'>¥ <text class='cuti'>{{amount}}</text></text>
+</view>
+</view>
+</view>
+
+
+<view class="bgWhite goodsDetaild">
+<view class='infoWrap clearfix'>
+<view class='navWrap clearfix'>
+<view class='nav navde {{goodsDetailsDisplay?"current":""}}' bindtap="showDetails"><text>详情</text></view>
+<view class='nav navev {{goodsEvaluateDisplay?"current":""}}' bindtap="showvaluate"><text>评价</text></view>
+</view>
+<view class='detailsWrap clearfix {{goodsDetailsDisplay?"":"none"}}'>
+<import src="../../../wxParse/wxParse.wxml" />
+<template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>
+<view class='evaluateWrap clearfix {{goodsEvaluateDisplay?"":"none"}}'>
+<view class='contentWidtn'>
+<view class='goodsScore tc'>
+<view class='pfWrap tc'>
+<text class='pf'>商品评分：</text><text class='score'>{{goodsScoreTotal}}</text>
+</view>
+<!--star-->
+<view class='starWrap clearfix'>
+<image wx:for='{{goodsScore}}' wx:key='goodsScore' src="/images/starRed{{goodsScore[index]>0?'Full':''}}.png" data-index='{{index}}'></image>
+</view>
+<!--//star-->
+</view>
+<!--oneEvaluate-->
+<view class='oneEvaluate clearfix' wx:for='{{comments}}' wx:key='comments' data-index="{{index}}">
+<view class='headPic fl'><image src='{{item.img}}'></image></view>
+<view class='info fl'>
+<text class='name'>{{item.name}}</text><text class='date'>{{item.creationTime}}</text>
+</view>
+<!--star-->
+<view class='starWrap fr clearfix'>
+<image wx:for='{{item.level}}' wx:for-index='key' wx:for-item='level' wx:key='level' src="/images/star{{level>0?'Full':''}}.png" data-index="{{key}}" class='small'></image>
+</view>
+<!--//star-->
+</view>
+<view class='noData' hidden="{{noData}}">没有评价哦~</view>
+<!--//oneEvaluate-->
+</view>
+</view>
+</view>
+</view>
+
+</view>
+
+<import src="/template/goods.wxml"/>
+<template is="bottomShoppingCart" data="{{cartTotal,carBotPad}}"></template>
+
+<view class='bottomBtnWrap'><button class='btn btnOrange' bindtap='addToCart' hover-class='button-hover'>加入购物车</button></view>
+
+
+<template is="good_box" data="{{hide_good_box,bus_x,bus_y}}"></template>

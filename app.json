@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/water/index/index",
+    "pages/water/order/confirm/confirm",
+    "pages/water/order/order",
+    "pages/water/shoppingCart/shoppingCart",
+    "pages/index/index",
+    "pages/water/order/details/details",
+    "pages/water/user/address/address",
+    "pages/water/search/search",
+    "pages/water/location/choiceGoods/choiceGoods",
+    "pages/water/location/location",
+    "pages/water/location/choiceAddress/choiceAddress",
+    "pages/water/order/evaluate/evaluate",
+    "pages/water/user/address/eidtAddress/edit",
+    "pages/water/user/deposit/deposit",
+    "pages/water/user/index/index",
+    "pages/water/goods/details",
+    "pages/logs/logs",
+    "template/popupBox",
+    "template/goods",
+    "pages/water/location/choiceDate/choiceDate",
+    "pages/water/location/remarks/remarks",
+    "pages/water/user/about/about"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0097ff",
+    "navigationBarTitleText": "运泉来",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "color": "#757575",
+    "selectedColor": "#117adb",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "#f1f4f6",
+    "list": [
+      {
+        "pagePath": "pages/water/index/index",
+        "text": "首页",
+        "iconPath": "images/tabBar_home.png",
+        "selectedIconPath": "images/tabBar_home_cur.png"
+      },
+      {
+        "pagePath": "pages/water/location/location",
+        "text": "一键送水",
+        "iconPath": "images/tabBar_water.png",
+        "selectedIconPath": "images/tabBar_water_cur.png"
+      },
+      {
+        "pagePath": "pages/water/order/order",
+        "text": "订单",
+        "iconPath": "images/tabBar_order.png",
+        "selectedIconPath": "images/tabBar_order_cur.png"
+      },
+      {
+        "pagePath": "pages/water/user/index/index",
+        "text": "我的",
+        "iconPath": "images/tabBar_my.png",
+        "selectedIconPath": "images/tabBar_my_cur.png"
+      }
+    ]
+  }
+}

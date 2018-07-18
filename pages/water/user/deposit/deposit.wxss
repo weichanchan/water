@@ -1,0 +1,6 @@
+.bgWhite{width:710rpx;margin-bottom: 20rpx;padding:20rpx;}
+.bgWhite .fl{width:520rpx;}
+.tit text{color: #aaa;font-size: 28rpx;}
+.myDeposit .cash{color: #f8280c;font-size:80rpx;}
+.myDeposit .bucket{color: #666;font-size: 36rpx;}
+.moneyBag{width:180rpx;height: 113rpx;margin-top:20rpx;}

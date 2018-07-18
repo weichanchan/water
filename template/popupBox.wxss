@@ -1,0 +1,67 @@
+/*弹窗*/
+.drawer_screen { width: 100%; height: 100%; background: #000;  opacity: 0.6;  overflow: hidden;   position: fixed;  top: 0;  left: 0;  z-index: 1000;  }
+
+.drawer_box {  width:560rpx;  overflow: hidden;  position: fixed;   top: 50%;   left: 90rpx;   z-index: 1001;  background: #fff;  margin: -300rpx 0 0 0;  border-radius: 10rpx;  } 
+.drawer_title{line-height: 80rpx; padding:30rpx 30rpx 0; text-align: center;  } 
+.drawer_title .close{float: right;width: 30rpx;height: 30rpx;margin: 10rpx 10rpx 0 0;}
+.drawer_content { padding:30rpx;}
+.drawer_box .btn_ok{width:415rpx;height: 88rpx;line-height: 88rpx; border-radius:68rpx;margin:0 auto 40rpx;} 
+.drawer_box .btn_cancel{width:413rpx;height: 86rpx;line-height: 86rpx; border-radius:68rpx;background-color: #fff;color: #666;border: 1rpx solid #e5e5e5;margin:0 auto 40rpx;} 
+.drawer_box .btn_cancel::after{border:1px solid #e5e5e5;}
+
+
+/*--共用圈--*/
+.drawer_quan{height: 600rpx;padding:30rpx 10rpx;}
+.drawer_quan .quan{float: left; height:70rpx;line-height:70rpx;padding:0 10rpx; border: 1rpx solid #ccc;border-radius: 50rpx;margin: 0 10rpx 20rpx; text-align: center;position: relative;}
+.drawer_quan .quan icon{top:-10rpx;right: 0;z-index: 3;}
+.drawer_quan .quan .icon_bg{width: 20rpx;height: 20rpx;border-radius: 100%; background: #fff;top:-6rpx;right:4rpx;z-index: 2;}
+.drawer_quan .quan icon,.drawer_quan .quan .icon_bg{display: none; position: absolute;}
+.drawer_quan .quan text{display: block; color: #333;font-size: 24rpx;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.drawer_quan .quan.selected{border: 1rpx solid #3eafff;}
+.drawer_quan .quan.selected text{color: #3eafff;}
+.drawer_quan .quan.selected icon,.drawer_quan .quan.selected .icon_bg{display: block;}
+
+/*--选择品牌--*/
+.drawer_brands{height: 400rpx;overflow-y: auto;}
+.drawer_brands .brand{float: left; width:137rpx;}
+
+
+/*--选择分类--*/
+.drawer_fenlei{height: 180rpx;}
+.drawer_quan .fenlei{padding: 0 40rpx;}
+.drawer_quan_title{padding:0 30rpx;font-size: 30rpx;color: #666;}
+
+/*--公用列表--*/
+.drawer_list{padding:30rpx 60rpx;}
+.drawer_list .list{line-height: 100rpx;border-bottom: 1rpx solid #e5e5e5;text-align: center;}
+.drawer_list .list:last-child{border-bottom:0;}
+.drawer_list .list text{color: #666;}
+.drawer_list .list.current text{color: #0097ff;}
+
+/*--当前城市--*/
+.drawer_currentCity{text-align: center;}
+.drawer_currentCity .cityError{width:224rpx; height: 224rpx;}
+.drawer_currentCity .p1{line-height: 120rpx;}
+.drawer_currentCity .p2{color: #666;line-height: 48rpx;padding:0 40rpx;}
+
+/*--购物车--*/
+.drawer_shoppingCart{text-align: center;}
+.drawer_shoppingCart .warn{width:160rpx; height: 160rpx;}
+.drawer_shoppingCart .del{line-height: 120rpx;}
+
+/*--备注--*/
+.remarks_text{width: 100%;height: 300rpx;position: relative;}
+.currentWordNumber{font-size: 24rpx;  color: #aaa;  position: absolute;  right: 10rpx;  top: -50rpx;}
+
+/*--押金--*/
+.drawer_aboutDeposit .text{font-size: 28rpx;color: #666;}
+
+.drawer_deposit .deposit{float: left;width:200rpx;padding:20rpx 0; border: 1rpx solid #ccc;border-radius: 10rpx;margin: 0 20rpx 40rpx;}
+.drawer_deposit .deposit .text{display: block;line-height:40rpx;text-align: center;}
+.drawer_deposit .deposit .price{}
+.drawer_deposit .deposit .type{font-size: 24rpx;}
+.drawer_deposit .deposit.selected{background: #0097ff;border: 1rpx solid #0097ff;color: #fff;}
+
+/*--配送时间--*/
+.drawer_box_date{top:40%;}
+.drawer_sendTime{text-align: center;}

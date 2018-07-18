@@ -1,0 +1,32 @@
+
+.oneGoodsEvaluate .bgWhite{width:690rpx;padding:30rpx;}
+.oneGoodsEvaluate{margin-bottom: 30rpx;}
+.oneGoodsEvaluate .headPic,.oneGoodsEvaluate .headPic image{width: 180rpx;height:180rpx;}
+.oneGoodsEvaluate .info {width: 485rpx;}
+.oneGoodsEvaluate .goodsName{height: 96rpx;line-height: 48rpx; margin-bottom:40rpx;overflow: hidden;}
+.oneGoodsEvaluate .goodsName text{}
+.oneGoodsEvaluate .textWrap textarea{width:710rpx;height:268rpx; padding:20rpx; background: #f3f3f3;border:none;border-bottom: 1px solid #e5e5e5;}
+
+.starWrap image{margin-right: 30rpx;}
+.starWrap image:last-child{margin-right:0rpx;}
+
+.senderEvaluateWrap{position: relative;}
+.senderEvaluate {width:750rpx;height:669rpx;padding-top:60rpx;position: absolute;top:0;left: 0;}
+.senderEvaluate .userHead{padding-bottom: 40rpx;}
+.senderEvaluate .userHead .headPic image{width: 120rpx;height: 120rpx;border-radius: 100%;margin: 0 auto;}
+.senderEvaluate .userHead .name,.senderEvaluate .userHead .phone {line-height: 50rpx;}
+.senderEvaluate .userHead .name text,.senderEvaluate .userHead .phone text{font-size: 28rpx;}
+.senderEvaluate .userHead .phone text{color: #aaa;}
+
+.senderEvaluate .pfTit,.senderEvaluate .starWrap {width: 330rpx;margin:0 auto 40rpx;}
+.senderEvaluate .pfTit{height: 20rpx; border-bottom: 1rpx solid #e5e5e5;}
+.senderEvaluate .pfTit text{float: left; line-height: 40rpx;padding: 0 20rpx; text-align: center; background: #fff;font-size: 28rpx;color: #666;margin-left: 80rpx;}
+.senderEvaluate .starWrap {padding-left: 20rpx;}
+
+.senderEvaluate .textWrap textarea{width:617rpx;height:166rpx; padding:10rpx; background: #fff;border: 1px solid #e5e5e5;border-radius: 10rpx; margin: 0 auto;}
+
+.senderEvaluate_bg{width:750rpx;height:729rpx;}
+
+.btnWrap button{border: none;border-radius: 0;}
+
+

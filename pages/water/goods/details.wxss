@@ -1,0 +1,53 @@
+.bgWhite {width: 100%;}
+
+.goodsBaseInfo{margin-bottom: 30rpx;}
+.banner{width: 100%; height:750rpx;}
+.slide-image{width:750rpx; height:750rpx;}
+swiper {height:750rpx;}
+
+.goodsName{height: 96rpx;line-height: 48rpx;overflow: hidden;}
+.goodsName text{}
+
+.typeWrap text,.priceWrap text{font-size:26rpx;color: #999;}
+.typeWrap {padding:20rpx 0;}
+.typeWrap .type{}
+.typeWrap .original{font-size:24rpx;text-decoration:line-through;}
+
+.priceWrap {line-height: 60rpx; padding-bottom:20rpx;}
+.priceWrap .kucun{padding-right: 20rpx;}
+.priceWrap .present{font-size: 36rpx;}
+.priceWrap .priceRed{color:#ff3144; padding-left: 10rpx;}
+.priceWrap .cuti{font-weight: bold;font-size: 36rpx;color:#ff3144;}
+
+.detailsWrap{line-height: 44rpx; font-size: 28rpx;color: #666;word-break:break-all;word-wrap:break-word;}
+.navWrap {height: 80rpx;line-height: 80rpx;border-bottom: 1rpx solid #e5e5e5;}
+.navWrap .nav{float: left;width: 50%; height: 80rpx;background: #fff;text-align: center;}
+.navWrap .nav text {display: block;width: 80rpx; height: 76rpx;line-height: 76rpx;margin: 0 auto;color: #666;}
+.navWrap .current text{border-bottom: 6rpx solid #0097ff;font-weight: bold;color: #333;}
+.navWrap .navde{}
+.navWrap .navev{}
+
+.goodsScore {padding-bottom: 50rpx;}
+.goodsScore .pfWrap{line-height: 100rpx;}
+.goodsScore .pfWrap .pf{font-size: 28rpx;color: #666;}
+.goodsScore .pfWrap .score{font-size: 48rpx;color: #ff3a44;}
+.goodsScore .starWrap {width: 240rpx;margin: 0 auto;}
+
+.oneEvaluate {border-bottom: 1rpx solid #e5e5e5;}
+.oneEvaluate:last-child {border-bottom:0;}
+.oneEvaluate .headPic image{width: 60rpx;height: 60rpx;border-radius: 100%;margin: 0 auto;}
+.oneEvaluate .info text{line-height: 60rpx; padding-left: 20rpx;} 
+.oneEvaluate .info .name{font-size: 28rpx;}
+.oneEvaluate .info .date{color: #666;font-size: 24rpx;} 
+.oneEvaluate .starWrap {width: 180rpx;padding-top:10rpx;}
+.oneEvaluate .starWrap .small{ width:26rpx;height: 26rpx;margin:12rpx 10rpx 0 0;}
+
+
+
+
+
+
+
+
+
+

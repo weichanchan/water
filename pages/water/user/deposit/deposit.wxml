@@ -1,0 +1,22 @@
+<view class="container">
+
+<view class='bgWhite'>
+<view class='fl'>
+<view class='tit'><text>押金（元）</text></view>
+<view class='myDeposit'><text class='cash'>￥{{myDeposit}}</text><text class='bucket'>（{{emptyBucketNumber}}桶）</text></view>
+</view>
+<image class='moneyBag fr' src='/images/moneyBag.png'></image>
+</view>
+
+<view class='contentWidtn'>
+<!--
+<view class='recharge editOperation shadow Triangle'>
+<text class='label'>押金充值</text>
+</view>-->
+
+<view class='recharge editOperation shadow Triangle' bindtap='putForwardDeposit'>
+<text class='label'>我的押金</text><text class='detail'>可提现{{enableDepositAmount}}元</text>
+</view>
+
+</view>
+</view>

@@ -1,0 +1,22 @@
+
+.bgBlue{width: 100%; height: 90rpx; background: #0097ff;}
+.contentWidtn{position: relative;padding-top: 400rpx;}
+.myBaseInfo{width:670rpx; padding:200rpx 20rpx 0;position: absolute;top:-33rpx;left: 20rpx;}
+.myBaseInfo .userHead{position: absolute;top:-50rpx;left:0;right:0;}
+.myBaseInfo .editOperation .label{padding-left:0;}
+
+.userHead{padding-bottom: 40rpx;}
+.userHead .headPic image{width: 122rpx;height: 120rpx;border-radius: 100%;margin: 0 auto;}
+.userHead .name text{font-size: 32rpx;}
+
+.centerLine .editOperation{padding-left:0;padding-right:0;}
+.border{border-bottom: 1px solid #e5e5e5;}
+.myDeposit{margin-bottom: 0;}
+.myDeposit .detail{color:#f8280c;}
+.myAddress .detail{color:#666;}
+
+
+.myAddress{margin-bottom: 0;}
+
+
+
