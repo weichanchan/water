@@ -20,7 +20,7 @@
 <image src='/images/icon_sendWater.png'></image><text>一键送水</text>
 </view>
 <view class='fl func waterTicket'>
-<image src='/images/icon_waterTicket.png'></image><text>运泉来水票</text>
+<image src='/images/icon_waterTicket.png'></image><text>泉润万家水票</text>
 </view>
 <view class='fl func waterPeople'>
 <image src='/images/icon_waterPeople.png'></image><text>成为推广人</text>
