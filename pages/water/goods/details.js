@@ -28,6 +28,14 @@ Page({
     cartTotal: 0,
     hide_good_box: true,
   },
+  onShareAppMessage: function (res) {
+    var that = this;
+    var id = that.data.id;
+    return {
+      title: '泉润万家',
+      path: '/pages/water/index/index?id=' + id + '&share_query=true'
+    }
+  },
   onLoad:function(options){
     var id = parseInt(options.id);
     this.setData({

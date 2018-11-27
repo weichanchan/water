@@ -41,7 +41,14 @@ Page({
     nowCity:'',
     hide_good_box: true,
   },
-  onLoad: function () {
+  onShareAppMessage: function (res) {
+    return {
+      title: '泉润万家',
+      path: '/pages/water/index/index'
+    }
+  },
+  onLoad: function (options) {
+    
     qqmapsdk = new QQMapWX({
       key: 'M6CBZ-DXHLF-D2CJK-NMB5I-5AZTV-4EBDO'
     });
@@ -53,6 +60,14 @@ Page({
     this.setData({
       systemInfo: systemInfo,
     });
+    if (options.share_query) {
+      setTimeout(function () {
+        wx.hideLoading()
+        wx.navigateTo({
+          url: '/pages/water/goods/details?id=' + options.id,
+        })
+      }, 100);
+    }
   },
   onShow: function () {
     var that=this;
